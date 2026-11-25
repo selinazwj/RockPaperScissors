@@ -4,4 +4,5 @@ results/*
 !results/.gitkeep
 !results/SUMMARY.md
 !results/lstm_validation.csv
+!results/lstm_hparams.csv
 .ipynb_checkpoints/

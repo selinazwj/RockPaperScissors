@@ -38,3 +38,15 @@ rps/baselines.py produces the official ones.
 By bot strategy (4-5 test players each, so treat with caution): from 57%
 (win_nil_lose_positive) to 87% (opponent_prev_move_nil).
 By previous outcome: 80% after a win, 58% after a tie, 54% after a loss.
+
+## Hyperparameter variants (validation, k = 10, feature set C, mean of 3 seeds)
+
+| Version | Change from v1 | Val. accuracy | Val. cross-entropy | Epochs |
+|---|---|---|---|---|
+| v1 | (1 layer, hidden 32, lr 0.001, no dropout) | 67.7% | 0.707 | 37 |
+| v2 | hidden 64 | 67.6% | 0.704 | 26 |
+| v3 | learning rate 0.003 | 67.8% | 0.704 | 17 |
+| v4 | 2 layers + dropout 0.2 | 67.6% | 0.702 | 35 |
+
+No variant beats v1 by more than the spread between seeds (about 0.2 points of
+accuracy), so we keep the simpler v1. Model capacity is not the bottleneck.
